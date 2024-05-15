@@ -1,4 +1,9 @@
-export const mockupItems = [
+interface IMockupItem {
+  type: string;
+  name: string;
+}
+
+export const mockupItems: IMockupItem[] = [
   {
     type: "Fruit",
     name: "Apple",
