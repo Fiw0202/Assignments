@@ -1,7 +1,5 @@
 import { IconHome, IconTable,IconListCheck, IconReportSearch } from "@tabler/icons-react";
 
-import { uniqueId } from "lodash";
-
 const Menuitems = [
   {
     id: 1,
@@ -27,7 +25,7 @@ const Menuitems = [
     id: 2,
     title: "Backend",
     icon: IconTable,
-    href: "/backend",
+    href: "",
     subheader: [],
   },
 ];
