@@ -1,4 +1,9 @@
-import { IconHome, IconTable,IconListCheck, IconReportSearch } from "@tabler/icons-react";
+import {
+  IconHome,
+  IconTable,
+  IconListCheck,
+  IconReportSearch,
+} from "@tabler/icons-react";
 
 const Menuitems = [
   {
@@ -11,13 +16,13 @@ const Menuitems = [
         id: 1.1,
         title: "Todo List",
         icon: IconListCheck,
-        href: "/frontend/todo",
+        href: "/todo",
       },
       {
         id: 1.2,
         title: "Create Data",
         icon: IconReportSearch,
-        href: "/frontend/create-data",
+        href: "/create-data",
       },
     ],
   },
