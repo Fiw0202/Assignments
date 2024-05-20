@@ -26,13 +26,13 @@ const Menuitems = [
       },
     ],
   },
-  {
-    id: 2,
-    title: "Backend",
-    icon: IconTable,
-    href: "",
-    subheader: [],
-  },
+  // {
+  //   id: 2,
+  //   title: "Backend",
+  //   icon: IconTable,
+  //   href: "",
+  //   subheader: [],
+  // },
 ];
 
 export default Menuitems;
