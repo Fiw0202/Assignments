@@ -24,7 +24,7 @@ const Logo = () => {
             alignItems: "center",
           }}
         >
-          <Typography variant="h4">Assignment</Typography>
+          <Typography variant="h4">Test</Typography>
         </Grid>
       </Grid>
     </Box>
