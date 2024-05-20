@@ -46,7 +46,7 @@ const Header = ({toggleMobileSidebar}: ItemType) => {
          
         <Box flexGrow={1} />
         <Stack spacing={1} direction="row" alignItems="center">
-          <Profile />
+          {/* <Profile /> */}
         </Stack>
       </ToolbarStyled>
     </AppBarStyled>
