@@ -19,8 +19,8 @@ interface IParamsFilter {
 const TodoList = () => {
   const newList = mockupItems.map((m) => ({ ...m, group: 1 }));
 
-  const [listPlantData, setPlantData] = useState<ISelectedItem[]>(newList);
-  const [selectedItems, setSelectedItems] = useState<ISelectedItem[]>([]);
+  const [listPlantData, setListPlantData] = useState<ISelectedItem[]>(newList);
+  // const [selectedItems, setSelectedItems] = useState<ISelectedItem[]>([]);
 
   const filteredData = ({ group, type }: IParamsFilter) => {
     const data = listPlantData?.filter(
@@ -42,28 +42,29 @@ const TodoList = () => {
     } else {
       item.group = 3;
     }
-    setPlantData((prevItems) => [...prevItems, item]);
-    setSelectedItems((prevItems) => [...prevItems, item]);
+    setListPlantData((prevItems) => [...prevItems, item]);
+    // setSelectedItems((prevItems) => [...prevItems, item]);
+
+    setTimeout(() => {
+      handleDeselect(item);
+    }, 5000);
   };
 
   const handleDeselect = (item: ISelectedItem) => {
+    // console.log("item Selected", item);
+    const updatedItem = { ...item, group: 1 };
+    // console.log("New item", updatedItem);
     item.group = 1;
-    setPlantData((prevItems) => [...prevItems, item]);
+    // console.log("item Plant", listPlantData);
+    setListPlantData((prevItems) =>
+      prevItems.map((m) =>
+        m.name === updatedItem.name && m.group === item.group ? updatedItem : m
+      )
+    );
+    // setSelectedItems((prevItems) =>
+    //   prevItems.filter((prevItem) => prevItem.name !== item.name)
+    // );
   };
-
-  const autoDeSelect = () => {
-    if (selectedItems.length > 0) {
-      const updatedSelectedItems = selectedItems.slice(1);
-      const autoList = selectedItems[0];
-      autoList.group = 1;
-      setPlantData((prevItems) => [...prevItems, autoList]);
-      setSelectedItems(updatedSelectedItems);
-    }
-  };
-
-  if (selectedItems.length > 0) {
-    setTimeout(async () => autoDeSelect(), 5000);
-  }
 
   return (
     <BaseCard title="Auto Delete Todo List">
